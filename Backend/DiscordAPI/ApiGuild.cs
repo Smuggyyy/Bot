@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Class : API GUILD
  * Desc. : Manadger les versions de l'api plus simplement
  * Author: Zenrox, Monstered
@@ -9,39 +9,49 @@ namespace DiscordREQ.Backend.DiscordAPI
 {
     internal class ApiGuild
     {
-        internal static string SetReactUrl(string ChannelID, string MessageID, string EncodedReaction)
+        internal static string KickUserUrl(string ServerID, string UserID, string Raison)
         {
-            return URI.SetReactUrl.Replace("ENCODEDREACT", EncodedReaction).Replace("CHANID", ChannelID).Replace("MSGID", MessageID);
+            return URI.KickUserUrl.Replace("SERVID", ServerID).Replace("USRID", UserID).Replace("RSON", Raison);
         }
-
-        internal static string SetPermChanUrl(string ChannelID, string RoleID)
+        internal static string DelTemplateUrl(string ServerID, string TemplateLink)
         {
-            return URI.SetPermChanUrl.Replace("CHANID", ChannelID).Replace("ROLID", RoleID);
+            return URI.DelTemplateUrl.Replace("SERVID", ServerID).Replace("TMPLINK", TemplateLink);
         }
-
-        internal static string PinsMessUrl(string ChannelID, string MessageID)
+        internal static string DelEmojiUrl(string ServerID, string Emoji)
         {
-            return URI.PinsMessUrl.Replace("CHANID", ChannelID).Replace("MESSID", MessageID);
+            return URI.DelEmojiUrl.Replace("SERVID", ServerID).Replace("EMOJI", Emoji);
         }
-
-        internal static string CreateWebhookUrl(string ChannelID)
+        internal static string RoleServerUrl(string ServerID, string RoleID)
         {
-            return URI.CreateWebhookUrl.Replace("CHANID", ChannelID);
+            return URI.RoleServerUrl.Replace("SERVID", ServerID).Replace("ROLID", RoleID);
         }
-
-        internal static string SendMessageUrl(string ChannelID)
+        internal static string BanUrl(string ServerID, string UserID)
         {
-            return URI.SendMessageUrl.Replace("CHANID", ChannelID);
+            return URI.BanUrl.Replace("SERVID", ServerID).Replace("USRID", UserID);
         }
-
-        internal static string TypingMessageUrl(string ChannelID)
+        internal static string UseTemplateUrl(string TemplateLink)
         {
-            return URI.TypingMessageUrl.Replace("CHANID", ChannelID);
+            return URI.UseTemplateUrl.Replace("TMPLINK", TemplateLink);
         }
-
-        internal static string GroupChannelUrl(string GroupChannelID)
+        internal static string CreateTemplateUrl(string ServerID)
         {
-            return URI.GroupChannelUrl.Replace("CHANID", GroupChannelID);
+            return URI.CreateTemplateUrl.Replace("SERVID", ServerID);
+        }
+        internal static string CreateChannelUrl(string ServerID)
+        {
+            return URI.CreateChannelUrl.Replace("SERVID", ServerID);
+        }
+        internal static string DeleteGuildUrl(string ServerID)
+        {
+            return URI.DeleteGuildUrl.Replace("SERVID", ServerID);
+        }
+        internal static string CreateRoleUrl(string ServerID)
+        {
+            return URI.CreateRoleUrl.Replace("SERVID", ServerID);
+        }
+        internal static string ChangeGuildSettingsUrl(string ServerID)
+        {
+            return URI.ChangeGuildSettingsUrl.Replace("SERVID", ServerID);
         }
     }
 }
