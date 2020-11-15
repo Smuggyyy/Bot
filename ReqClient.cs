@@ -1,5 +1,5 @@
-﻿using DiscordREQ.Backend.DiscordAPI;
 using DiscordREQ.Backend;
+using System.Threading;
 
 namespace DiscordREQ
 {
@@ -13,14 +13,40 @@ namespace DiscordREQ
             Cache.UserAgent = userAgent;
         }
         
-        public void SendMessage(string Message, string Channel, bool tts = false) => Request.SendRequest(API.SendMessageUrl(Channel), "POST", Cache.Token, $"\"content\":\"{Message}\", \"nonce\":\"{Channel}\",\"tts\": \"{tts}\"", Cache.Proxy, Cache.Timeout, Cache.UserAgent);
-        
-        public void DeleteMessage(string MessageID, string Channel) => Request.SendRequest(API.DeleteMessageUrl(MessageID, Channel), "DELETE", Cache.Token, "", Cache.Proxy, Cache.Timeout, Cache.UserAgent);
+        public void ThreadedJoin(string Invite)
+        {
+            Thread T = new Thread(() => Modules.Guild.JoinServer(Invite));
+            T.Start();
+        }
 
-        public void JoinServer(string InviteCode) => Request.SendRequest(API.JoinServerURL(InviteCode), "POST", Cache.Token, "", Cache.Proxy, Cache.Timeout, Cache.UserAgent);
+        public void ThreadedLeave(string ServerID)
+        {
+            Thread T = new Thread(() => Modules.Guild.LeaveServer(ServerID));
+            T.Start();
+        }
 
-        public void LeaveServer(string ServerID) => Request.SendRequest(API.LeaveServerUrl(ServerID), "DELETE", Cache.Token, "", Cache.Proxy, Cache.Timeout, Cache.UserAgent);
+        public void ThreadedAddUserToGroup(string UserID, string GroupID)
+        {
+            Thread T = new Thread(() => Modules.Group.AddUserFromGroup(UserID, GroupID));
+            T.Start();
+        }
 
-        public void Typing(string ChannelID) => Request.SendRequest(API.TypingMessageUrl(ChannelID), "POST", Cache.Token, "", Cache.Proxy, Cache.Timeout, Cache.UserAgent);
+        public void ThreadedKickUserToGroup(string UserID, string GroupID)
+        {
+            Thread T = new Thread(() => Modules.Group.KickUserFromGroup(UserID, GroupID));
+            T.Start();
+        }
+
+        public void ThreadedSendMessage(string Message, string ChannelID, bool tts = false)
+        {
+            Thread T = new Thread(() => Modules.Message.SendMessage(Message, ChannelID, tts));
+            T.Start();
+        }
+
+        public void ThreadedRemoveSendMessage(string MessageID, string ChannelID)
+        {
+            Thread T = new Thread(() => Modules.Message.DeleteMessage(MessageID, ChannelID));
+            T.Start();
+        }
     }
 }
