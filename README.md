@@ -1,10 +1,28 @@
 # DiscordREQ V0.0.1 | Made by Zenrox & Monstered
 
-* Proxy support
-* User-agent spoofing
-* Powerfull
-* Simple
-* Multi Threading (Fast)
+```
+--------------------------------------
+
+✨ > Usurp the user-agent and the ip address very simply
+✨ > Very easy to use
+✨ > No coding skill is required
+
+--------------------------------------
+
+✔️ > Version 0.0.1
+⭐ > Made by Zenrox x Monstered
+📦 > Contact here: eviltool.contact@gmail.com
+
+--------------------------------------
+
+👉 Proxy support
+👉 User-agent spoofing
+👉 Powerfull
+👉 Simple
+👉 Multi Threading (Fast)
+
+--------------------------------------
+```
 
 ```cs
 using DiscordREQ;
