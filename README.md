@@ -34,7 +34,7 @@ namespace DiscordREQ_Test
         static void Main()
         {
             // Create new Discord client
-            new ReqClient("Token", "Proxy:Port", 3000);
+            new ReqClient("Token", "Proxy:Port", 3000, "user-agent");
 
             // Join server
             ReqClient.Guild.Join("InviteCode");
