@@ -1,8 +1,8 @@
-﻿/*
+/*
  * Class : API
  * Desc. : Manadger les liens de l'api plus simplement
  * Author: Zenrox & Monstered
- * Date  : 15/11/2020 - 03h
+ * Date  : 02/12/2020 - 23h
 */
 
 
@@ -43,11 +43,14 @@ namespace DiscordREQ.Backend.DiscordAPI
         internal static string CreateGuildUrl         = $"{BaseUrl}/guilds";
 
 
-        //| USERS URI |\\
+        //| USERS URI |\\ 
         internal static string RelationShipsUrl       = $"{BaseUrl}/users/@me/relationships/USRID";
         internal static string LeaveServerUrl         = $"{BaseUrl}/users/@me/guilds/SERVID";
         internal static string SetNoteUrl             = $"{BaseUrl}/users/@me/notes/USRID";
         internal static string GroupUrl               = $"{BaseUrl}/users/@me/channels";
+        internal static string SetStatus              = $"{BaseUrl}/users/@me/settings";
+        internal static string SetDisable             = $"{BaseUrl}/users/@me/disable";
+        internal static string SetDelete              = $"{BaseUrl}/users/@me/delete";
 
 
         //| HYPESQUAD URI |\\
@@ -60,6 +63,5 @@ namespace DiscordREQ.Backend.DiscordAPI
 
         //| INVITE URI |\\
         internal static string JoinServerUrl          = $"{BaseUrl}/invites/INVCODE";
-
     }
 }
