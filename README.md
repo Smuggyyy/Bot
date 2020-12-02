@@ -1,25 +1,26 @@
-# DiscordREQ V0.0.1 | Made by Zenrox & Monstered
+# DiscordREQ V0.0.2(.1 instable) | Made by Zenrox & Monstered
 
 ```
 --------------------------------------
 
-✨ > Usurp the user-agent and the ip address very simply
+✨ > Usurp the user-agent, fingerprint and the ip address very simply
 ✨ > Very easy to use
 ✨ > No coding skill is required
 
 --------------------------------------
 
-✔️ > Version 0.0.1
+✔️ > Version 0.0.2(.1 instable)
 ⭐ > Made by Zenrox x Monstered
 📦 > Contact here: eviltool.contact@gmail.com
 
 --------------------------------------
 
-👉 Proxy support
+👉 Full Proxy support (http/s, socks4, socks5)
 👉 User-agent spoofing
+👉 FingerPrint spoofing
 👉 Powerfull
 👉 Simple
-👉 Multi Threading (Fast)
+👉 Multi Threading (enable / disable)
 
 --------------------------------------
 ```
@@ -33,8 +34,8 @@ namespace DiscordREQ_Test
     {
         static void Main()
         {
-            // Create new Discord client
-            new ReqClient("Token", "Proxy:Port", 3000, "user-agent");
+            // Create new Discord client ==> string token, string proxy, string ProxyType, int timeout, bool Threaded, string userAgent, string XFingerPrint
+            new ReqClient("Token", "Proxy:Port", "ProxyType", 3000, false, "user-agent", XFingerPrint);
 
             // Join server
             ReqClient.Guild.Join("InviteCode");
