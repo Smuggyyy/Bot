@@ -24,7 +24,7 @@
 
 --------------------------------------
 ```
-
+# Code Exemple
 ```cs
 using DiscordREQ;
 
