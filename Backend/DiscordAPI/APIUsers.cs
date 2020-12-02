@@ -1,8 +1,8 @@
-﻿/*
+/*
  * Class : API USER
  * Desc. : Manadger les versions de l'api plus simplement
  * Author: Zenrox & Monstered
- * Date  : 15/11/2020 - 06h
+ * Date  : 02/12/2020 - 22h
 */
 
 namespace DiscordREQ.Backend.DiscordAPI
@@ -17,6 +17,21 @@ namespace DiscordREQ.Backend.DiscordAPI
         internal static string SetNoteUrl(string UserID)
         {
             return URI.SetNoteUrl.Replace("USRID", UserID);
+        }
+
+        internal static string SetStatus()
+        {
+            return URI.SetStatus;
+        }
+
+        internal static string SetDisable()
+        {
+            return URI.SetDisable;
+        }
+
+        internal static string SetDelete()
+        {
+            return URI.SetDelete;
         }
     }
 }
