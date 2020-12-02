@@ -3,10 +3,11 @@
  * Desc. : Classe principale
  * Author: Zenrox, Monstered
  * Date  : 02/12/2020 - 21h
- * Ajout : Thread, Grosse optimisation, groupbuilder retirer, Proxy socks4 & 5 & fingerprint personalisé
+ * Ajout : Thread, Grosse optimisation, groupbuilder remiser, Proxy type & fingerprint personalisé
 */
 
 using static DiscordREQ.Modules.RelationShip;
+using static DiscordREQ.Modules.UserSettings;
 using static DiscordREQ.Modules.Message;
 using static DiscordREQ.Modules.Group;
 using static DiscordREQ.Modules.Guild;
@@ -133,6 +134,24 @@ namespace DiscordREQ
             public static void Join(string Invite) => JoinServer(Invite);
             public static void Leave(string ServerID) => LeaveServer(ServerID);
             public static void Delete(string ServerID) => DeleteServer(ServerID);
+        }
+    
+        public class User
+        {
+            public class Setting
+            {
+                public static void Set_status(string Status) => SetStatus(Status);
+                public static void Set_CustomStatus(string Text, string Expire) => SetCustomStatus(Text, Expire);
+                public static void Set_Theme(string Theme) => SetTheme(Theme);
+                public static void Set_DevMode(bool DevMode) => SetDevMode(DevMode);
+                public static void Set_Username(string Name, string Pwd) => SetUsername(Name, Pwd);
+                public static void Set_Language(string Langue) => SetLanguage(Langue);
+                public static void Set_DisplayCompact(bool Display) => SetDisplayCompact(Display);
+                public static void Set_AnimateStickers(string Choice) => SetAnimateStickers(Choice);
+                public static void Set_ContentFilter(string Filter) => SetContentFilter(Filter);
+                public static void Disable_Account(string Password) => DisableAccount(Password);
+                public static void Delete_Account(string Password) => DeleteAccount(Password);
+            }
         }
     }
 }
