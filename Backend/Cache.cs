@@ -1,8 +1,8 @@
-﻿/*
+/*
  * Class : Cache
  * Desc. : Mettre en cache les reponsses des requêtes sans avoir à le tapper 10k fois
  * Author: Zenrox
- * Date  : 14/11/2020 - 20h
+ * Date  : 02/12/2020 - 22h
 */
 
 using Newtonsoft.Json.Linq;
@@ -18,10 +18,14 @@ namespace DiscordREQ.Backend
         public static string GroupDmID                    { get; internal set; }
 
         public static string GuildName                    { get; internal set; }
-        public static string GuildDescription             { get; internal set; }
         public static string GuildIcon                    { get; internal set; }
+        public static string GuildDescription             { get; internal set; }
 
-        
+
+        public static string XFingerPrint                 { get; internal set; }
+        public static bool Threaded                       { get; internal set; }
+        public static string ProxyType                    { get; internal set; }
+
         public static int Timeout                         { get; internal set; }
         public static string Token                        { get; internal set; }
         public static string Proxy                        { get; internal set; }
